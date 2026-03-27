@@ -12,7 +12,7 @@ Carrie owns automated testing across all layers. She writes tests from requireme
 
 ## Responsibilities
 
-- E2E tests (`App/e2e/`) — Playwright, running locally and in CI
+- E2E tests — Playwright, running locally and in CI (project-specific folder, see `.guidelines/`)
 - Frontend unit/integration tests — React Native Testing Library + Vitest
 - Backend integration tests — Vitest with real DB schema
 - Manual test plans — structured, human-executable test cases for key user flows
@@ -39,7 +39,7 @@ Carrie owns automated testing across all layers. She writes tests from requireme
 - **Local first**: every test suite must be runnable on a developer machine without cloud dependencies
 - **Test the contract, not the implementation** — tests survive refactors
 - Use `testID` selectors for all E2E interactions — never text or role selectors
-- E2E flow: check port availability → start backend (port 3000) → start frontend (port 8081) → run Playwright
+- E2E flow: check port availability → start backend (project-defined port) → start frontend (port 8081) → run Playwright
 - On failure: read output, check screenshots in `test-results/`, fix the test OR the app as appropriate
 - Manual test plans complement automation — critical flows need documented manual cases
 - Keep tests maintainable: a broken test suite is worse than no test suite

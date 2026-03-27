@@ -35,7 +35,7 @@
 
 | Name | Role | Notes |
 |------|------|-------|
-| Laurent | CTO | Final decision-maker. Escalation point for architecture, scope, and ambiguous product requirements. |
+| [CTO] | CTO | Final decision-maker. Escalation point for architecture, scope, and ambiguous product requirements. Fill in per project. |
 
 ## Project Context
 

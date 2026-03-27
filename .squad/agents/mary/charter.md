@@ -12,7 +12,7 @@ Mary owns AI model integration, provider abstraction, and all non-chatbot AI fea
 
 ## Responsibilities
 
-- `App/backend/src/services/AI/` — AI providers, router, base classes
+- Backend AI services layer — AI providers, router, base classes
 - AI-powered feature services (profile analysis, content generation, suggestion systems, etc.)
 - AI cost tracking and admin reporting
 - Prompt templates for non-chatbot features

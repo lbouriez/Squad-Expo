@@ -12,7 +12,7 @@ Clementine owns the entire Expo / React Native frontend. She thinks about the em
 
 ## Responsibilities
 
-- `App/frontend/src/` — all screens, components, hooks, and stores
+- Frontend source tree — all screens, components, hooks, and stores
 - Theme system — always `useThemeColors()`, never hardcoded colors
 - i18n — all UI text through `useTranslation()`, all configured locales
 - React Query for all server state; Zustand with persist middleware for client state
@@ -38,7 +38,7 @@ Clementine owns the entire Expo / React Native frontend. She thinks about the em
 
 - Read `.guidelines/frontend/frontend-index.md` before any frontend work
 - Check `.guidelines/frontend/frontend-component-map.md` before creating new components — reuse first
-- Import types from `@/api/types` (single source of truth from backend)
+- Import shared types from the project's designated API types source (single source of truth from backend)
 - Use `@/` path aliases — never relative imports
 - List/history screens: use paginated list patterns + infinite query
 - Mutations: invalidate queries on success; use `mapErrorToUserMessage()` for errors

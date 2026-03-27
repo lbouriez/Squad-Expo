@@ -6,7 +6,7 @@
 **Date:** 2026-03-27  
 **Status:** Active  
 **Decision:** Squad-Expo is a shared upstream Squad repository designed for Expo/React Native projects. It is not tied to any single project. Memory is always per-project (never shared via upstream). Agents, ceremonies, routing, and wisdom are shared.  
-**Rationale:** ReKindle and Kidhoot share the same technology stack (Expo, React Native, EAS, Supabase/Firebase) and benefit from a consistent team structure. Maintaining two separate full squads would diverge rapidly.
+**Rationale:** Expo/React Native projects sharing the same technology stack (Expo, React Native, EAS) benefit from a consistent team structure. Maintaining separate full squads per project would diverge rapidly.
 
 ---
 
@@ -38,7 +38,7 @@
 **Date:** 2026-03-27  
 **Status:** Active  
 **Decision:** Manchas (Psychologue) participates in every Pre-Dev Kickoff and every Review Pipeline run — but only when the project has explicitly activated a Psychologue role. Inactive by default.  
-**Rationale:** Kidhoot requires child safety review for every screen. ReKindle requires couple dynamics review. Other future projects may not need domain psychology at all. Making Manchas conditional avoids ceremony bloat on projects that don't need it.
+**Rationale:** Some projects (e.g., children's apps) require domain safety review for every screen; others (e.g., emotionally sensitive apps) need a different domain lens; others need none at all. Making Manchas conditional avoids ceremony bloat on projects where domain psychology isn't relevant.
 
 ---
 

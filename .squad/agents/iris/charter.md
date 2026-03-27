@@ -12,7 +12,7 @@ Iris maintains all user-facing documentation — website feature guides, help co
 
 ## Responsibilities
 
-- Website user-facing documentation (`Website/docs/` or project equivalent)
+- Website user-facing documentation (project docs folder — see `.guidelines/` for location)
 - Feature guides and how-to articles written for end users (non-technical language)
 - Keeping user docs synchronized with shipped features — no docs for unreleased features, no gaps for released ones
 - App Store descriptions, feature bullets, and metadata copy
@@ -45,3 +45,4 @@ Iris maintains all user-facing documentation — website feature guides, help co
 - Works with Hollis on visual content (screenshots, UI illustrations)
 - Works with Rob to avoid overlap: Rob owns technical / developer docs, Iris owns user-facing docs
 - Works with Alex on localization of user-facing documentation content
+- Before starting work, read `.squad/decisions.md`. Write new decisions to `.squad/decisions/inbox/iris-{slug}.md`.

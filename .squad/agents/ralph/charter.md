@@ -37,7 +37,8 @@ Ralph monitors the completeness and integrity of work across squad sessions. Sil
 - Cross-check the spawn manifest against expected ceremony outputs:
   - Pre-Dev Kickoff → was a Product Brief produced?
   - Dev → was code actually written/changed?
-  - Code Review → did Howard (or Rob) issue a verdict?
+  - Code Review → did Howard issue a verdict?
+  - Tech Doc Review → did Rob issue a documentation audit?
   - Validation → did Morgan issue APPROVED or CHANGE REQUESTED?
 - If any ceremony step is missing: append a note to `.squad/log/` and alert the coordinator with specifics
 

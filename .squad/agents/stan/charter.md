@@ -12,8 +12,8 @@ Stan owns the backend API. Precise and checklist-driven — he doesn't ship with
 
 ## Responsibilities
 
-- Backend API (`App/backend/src/`) — routes, services, repositories, schemas
-- Dependency injection — `di/identifiers.ts` and `di/modules/`
+- Backend API source tree — routes, services, repositories, schemas
+- Dependency injection — DI identifiers and module registrations (see project's `di/` or equivalent)
 - Prisma schema and migrations — never `db push`, always `migrate dev`
 - Zod schemas with `.openapi()` annotations on every schema
 - Integration tests using the project's test helpers

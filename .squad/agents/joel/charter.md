@@ -12,8 +12,8 @@ Joel owns the chatbot conversation system end-to-end — backend chat service, t
 
 ## Responsibilities
 
-- `App/backend/src/services/chat/` — ChatService, MemoryService, RAGService, ContextProvider
-- `App/backend/src/services/chat/tools/` — ToolRegistry, ToolExecutor, all ITool handlers
+- Backend chat service layer — ChatService, MemoryService, RAGService, ContextProvider
+- Tool system — ToolRegistry, ToolExecutor, all ITool handlers
 - Chat-related frontend screens and components
 - Tool system architecture: Strategy Pattern, ITool interface, tool definitions with `aiGuidance`
 - Memory and RAG pipeline
