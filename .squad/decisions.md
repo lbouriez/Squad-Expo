@@ -48,6 +48,14 @@
 **Decision:** Casting (policy.json, registry.json) is project-specific and lives in each project's `.squad/casting/` directory. The shared Squad-Expo repo has no casting files.  
 **Rationale:** Casting controls which model handles each agent, which may differ per project's API access, budget, and performance requirements. Sharing casting would impose one project's constraints on all others.
 
+### ADR-007: ask_user is mandatory at every coordinator handoff
+**Date:** 2026-03-27  
+**Status:** Active  
+**Decision:** The coordinator MUST use `ask_user` every time it hands control back to the CTO or user. This applies after every ceremony, after every work batch, after every review pipeline run, and after QA sign-off. Concrete next-step suggestions (2–4 choices) must be provided. Ending a turn with plain text output and no structured handoff is a violation of this rule.  
+**Rationale:** Walls of text after agent work are disorienting. A structured `ask_user` prompt ensures the CTO stays in control of pace and direction, reduces cognitive load, and prevents the coordinator from silently continuing down a path that may not align with current priorities. This is the single most important UX rule for the squad.
+
+---
+
 ## Governance
 
 - All meaningful changes require team consensus

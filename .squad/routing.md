@@ -102,4 +102,4 @@ All review requirements are defined in **Rule 5** of the Rules section below. Th
 
 7. **Psychologue gate:** If the project has a Psychologue (Manchas) configured, Manchas participates in every Pre-Dev Kickoff AND every review pipeline, not just safety-critical changes.
 
-8. **Every coordinator handoff uses `ask_user`.** Present 2–4 concrete next-step suggestions when returning control to the CTO. Always include a freeform option.
+8. **`ask_user` is MANDATORY at every coordinator handoff.** After every ceremony, work batch, review pipeline run, and QA sign-off — present 2–4 concrete next-step suggestions. Never end a turn with plain text output and no structured choice. One question at a time only; chain follow-ups after the answer. This is enforced by ADR-007.
