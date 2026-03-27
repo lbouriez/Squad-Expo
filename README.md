@@ -1,7 +1,7 @@
 # Squad-Expo
 
 Shared [Squad](https://github.com/bradygaster/squad) configuration for Expo / React Native projects.
-Provides a reusable AI agent team via upstream inheritance — no duplication across repos.
+A ready-to-use AI agent team — copy it into any new Expo project to hit the ground running.
 
 **Last updated:** 2026-03-27
 
@@ -10,31 +10,11 @@ Provides a reusable AI agent team via upstream inheritance — no duplication ac
 ## What is this?
 
 [Squad](https://github.com/bradygaster/squad) is an AI agent team framework for GitHub Copilot.
-This repo is a shared Squad upstream: add it to any Expo project and inherit the full team,
-routing rules, decisions, and skills — without copying anything.
+This repo is a **shared team baseline**: copy the `.squad/` folder into a new project and customize
+from there. Each project keeps its own memory and state — nothing is shared at runtime.
 
-```bash
-squad upstream add https://github.com/lbouriez/Squad-Expo.git --name platform --ref main
-squad upstream sync platform
-```
-
-**What gets inherited by downstream projects:**
-
-| Artifact | Location |
-|----------|----------|
-| Agent charters | `.squad/agents/*/charter.md` |
-| Routing rules | `.squad/routing.md` |
-| Ceremonies | `.squad/ceremonies.md` |
-| Decisions (ADRs) | `.squad/decisions.md` |
-| Team wisdom | `.squad/identity/wisdom.md` |
-| Casting policy | `.squad/casting/policy.json` |
-| Skills | `.squad/skills/*/SKILL.md` |
-
-**What stays local in each project:**
-
-- `team.md` — who the CTO is, which agents are active
-- Agent memory (`history.md`, `history-archive.md`)
-- Project-specific skills and decisions
+See the [team-state-storage pattern](https://bradygaster.github.io/squad/docs/scenarios/team-state-storage/)
+for the recommended approach.
 
 ---
 
@@ -83,15 +63,14 @@ The `[CTO]` role is filled per-project in each repo's local `team.md`.
 
 ## Using in a project
 
-1. Run `squad init` in your repo
-2. Add this upstream:
-   ```bash
-   squad upstream add https://github.com/lbouriez/Squad-Expo.git --name platform --ref main
-   squad upstream sync platform
-   ```
-3. Customize your local `team.md` (set CTO name, trim unused agents)
-4. Add project-specific skills to `.squad/skills/`
-5. Gitignore the runtime cache: add `.squad/_upstream_repos/` to `.gitignore`
+1. Clone or download this repo
+2. Copy the `.squad/` folder into your new project
+3. Run `squad init` to register Squad with GitHub Copilot (if not already done)
+4. Edit `.squad/team.md` — set the `[CTO]` placeholder to the real name
+5. Add project-specific skills to `.squad/skills/`
+6. Remove agents you don't need from `team.md`
+
+Each project keeps its own agent memory (`history.md`) and decisions — nothing is shared at runtime.
 
 ---
 
