@@ -41,7 +41,7 @@ for the recommended approach.
 | **Scribe** | Session Logger (silent) |
 | **Ralph** | Work Monitor |
 
-The `[CTO]` role is filled per-project in each repo's local `team.md`.
+The `[CTO]` role is **Laurent** across all projects.
 
 ---
 
@@ -66,9 +66,8 @@ The `[CTO]` role is filled per-project in each repo's local `team.md`.
 1. Clone or download this repo
 2. Copy the `.squad/` folder into your new project
 3. Run `squad init` to register Squad with GitHub Copilot (if not already done)
-4. Edit `.squad/team.md` — set the `[CTO]` placeholder to the real name
-5. Add project-specific skills to `.squad/skills/`
-6. Remove agents you don't need from `team.md`
+4. Add project-specific skills to `.squad/skills/`
+5. Remove agents you don't need from `team.md`
 
 Each project keeps its own agent memory (`history.md`) and decisions — nothing is shared at runtime.
 
