@@ -1,14 +1,16 @@
 {
   "mcpServers": {
-    "EXAMPLE-github": {
+    "playwright": {
+      "type": "local",
       "command": "npx",
-      "args": [
-        "-y",
-        "@anthropic/github-mcp-server"
-      ],
-      "env": {
-        "GITHUB_TOKEN": "${GITHUB_TOKEN}"
-      }
+      "tools": ["*"],
+      "args": ["@playwright/mcp@latest"]
+    },
+    "sentry": {
+      "type": "http",
+      "url": "https://mcp.sentry.dev/mcp",
+      "headers": {},
+      "tools": ["*"]
     }
   }
 }
