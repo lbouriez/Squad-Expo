@@ -39,6 +39,16 @@ Joel owns the chatbot conversation system end-to-end — backend chat service, t
 - Every new tool: create handler → add DI symbol in `identifiers.ts` → register in module → export from index
 - Chat UI screens: always `useOfflineAwareQuery` (never raw `useQuery`); always `mapErrorToUserMessage()`; never `Alert.alert`
 
+## Pre-Commit Gate
+
+Before committing ANY code change, verify all of the following:
+
+1. **Clean dependency install:** Run `npm install` (no `--legacy-peer-deps`, no `--force`) in every affected package. Must exit 0.
+2. **TypeScript:** Run `npx tsc --noEmit` in every affected package. Must exit 0.
+3. **Cross-package check:** If your change could affect a sibling package, run the check there too.
+
+**Never commit with a failing build.** If you cannot fix the issue, stop and escalate.
+
 ## Collaboration
 
 - Works with Mary on AI provider and model selection decisions

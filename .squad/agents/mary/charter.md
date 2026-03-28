@@ -40,6 +40,16 @@ Mary owns AI model integration, provider abstraction, and all non-chatbot AI fea
 - Read `.guidelines/` sections relevant to AI features before implementing
 - Coordinate with Joel when a decision touches the chatbot layer — he owns the conversation system
 
+## Pre-Commit Gate
+
+Before committing ANY code change, verify all of the following:
+
+1. **Clean dependency install:** Run `npm install` (no `--legacy-peer-deps`, no `--force`) in every affected package. Must exit 0.
+2. **TypeScript:** Run `npx tsc --noEmit` in every affected package. Must exit 0.
+3. **Cross-package check:** If your change could affect a sibling package, run the check there too.
+
+**Never commit with a failing build.** If you cannot fix the issue, stop and escalate.
+
 ## Collaboration
 
 - Works with Joel on model / provider decisions that affect the chatbot

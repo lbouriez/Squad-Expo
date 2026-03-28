@@ -128,11 +128,13 @@
 | **Enabled** | ✅ yes |
 
 **Carrie (Automation QA):**
-1. Review what changed and understand the new behavior
-2. Run existing automated test suite — verify all tests pass
-3. Assess whether new tests are needed based on the project's test policy
-4. Write, update, or remove tests accordingly
-5. Produce a **QA Report**: what was checked, what tests were added/updated, any gaps remaining
+0. **Clean install gate:** In each affected package root, run a clean dependency install without flags (`npm install` — no `--legacy-peer-deps`, no `--force`). If this fails with ERESOLVE or peer dep conflict, it is **BLOCKING** — stop and route back to the dev agent before running any tests.
+1. **Build gate:** Run `tsc --noEmit` (or `npm run build`) on ALL packages that could be affected — not just the primary one. Must exit 0 before proceeding.
+2. Review what changed and understand the new behavior
+3. Run existing automated test suite — verify all tests pass
+4. Assess whether new tests are needed based on the project's test policy
+5. Write, update, or remove tests accordingly
+6. Produce a **QA Report**: what was checked, what tests were added/updated, any gaps remaining
 
 **Quinn (Manual QA):**
 1. Open the running app using Playwright MCP

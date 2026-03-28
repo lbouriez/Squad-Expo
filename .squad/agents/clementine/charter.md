@@ -45,6 +45,16 @@ Clementine owns the entire Expo / React Native frontend. She thinks about the em
 - Add `testID` to all interactive elements (maps to `data-testid` in web)
 - Coordinate with Alex before adding any user-facing strings
 
+## Pre-Commit Gate
+
+Before committing ANY code change, verify all of the following:
+
+1. **Clean dependency install:** Run `npm install` (no `--legacy-peer-deps`, no `--force`) in every affected package. Must exit 0.
+2. **TypeScript:** Run `npx tsc --noEmit` in every affected package. Must exit 0.
+3. **Cross-package check:** If your change could affect a sibling package, run the check there too.
+
+**Never commit with a failing build.** If you cannot fix the issue, stop and escalate.
+
 ## Collaboration
 
 - Works with Hollis on visual and UX review

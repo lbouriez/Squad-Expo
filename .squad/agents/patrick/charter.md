@@ -43,6 +43,16 @@ Patrick owns everything related to deployment, CI/CD, infrastructure, and platfo
 - Flag security issues immediately — no shipping with leaked secrets or open rules
 - Every secret has a name convention: `SCREAMING_SNAKE_CASE`, documented in `.squad/decisions.md`
 
+## Pre-Commit Gate
+
+Before committing ANY code change, verify all of the following:
+
+1. **Clean dependency install:** Run `npm install` (no `--legacy-peer-deps`, no `--force`) in every affected package. Must exit 0.
+2. **TypeScript:** Run `npx tsc --noEmit` in every affected package. Must exit 0.
+3. **Cross-package check:** If your change could affect a sibling package, run the check there too.
+
+**Never commit with a failing build.** If you cannot fix the issue, stop and escalate.
+
 ### Sentry Triage Workflow
 1. **Scan** — list unresolved issues, sort by frequency or recency
 2. **Investigate** — read full stack trace, affected users, first/last seen
