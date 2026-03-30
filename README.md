@@ -1,24 +1,30 @@
-# Squad-Expo
+# Squad Templates
 
-Shared [Squad](https://github.com/bradygaster/squad) configuration for Expo / React Native projects.
-A ready-to-use AI agent team — copy it into any new Expo project to hit the ground running.
+A collection of ready-to-use [Squad](https://github.com/bradygaster/squad) AI agent team templates.
+Pick the squad that matches your project type, copy its folder, and start building.
 
-**Last updated:** 2026-03-27
+**Last updated:** 2026-03-30
 
 ---
 
 ## What is this?
 
 [Squad](https://github.com/bradygaster/squad) is an AI agent team framework for GitHub Copilot.
-This repo is a **shared team baseline**: copy the `.squad/` folder into a new project and customize
-from there. Each project keeps its own memory and state — nothing is shared at runtime.
+This repo is a **template library**: each subfolder is a self-contained squad ready to be copied
+into a new project. Each project keeps its own memory and state — nothing is shared at runtime.
 
 See the [team-state-storage pattern](https://bradygaster.github.io/squad/docs/scenarios/team-state-storage/)
 for the recommended approach.
 
+The `[CTO]` role is **Laurent** across all squads.
+
 ---
 
-## The Team
+## Available Squads
+
+### `Expo-Squad/` — React Native / Expo
+
+Full-stack mobile development team for Expo projects.
 
 | Name | Role |
 |------|------|
@@ -41,22 +47,47 @@ for the recommended approach.
 | **Scribe** | Session Logger (silent) |
 | **Ralph** | Work Monitor |
 
-The `[CTO]` role is **Laurent** across all projects.
+---
+
+### `Nectari-Devops-Squad/` — DevOps / Cloud Infrastructure (Jurassic Park universe)
+
+DevOps and cloud automation team for Azure/GitHub Actions pipelines. No GitHub Issues integration.
+
+| Name | Role |
+|------|------|
+| **Malcolm** | Product Owner |
+| **Grant** | Architect & Code Reviewer |
+| **Ellie** | QA Engineer |
+| **Arnold** | Pipeline Engineer |
+| **Wu** | Cloud Automation Engineer |
+| **Muldoon** | Expert DevOps |
+| **Harding** | Technical Writer |
+| **Scribe** | Session Logger (silent) |
 
 ---
 
 ## Structure
 
+Each squad folder follows this layout:
+
 ```
-.squad/
-├── agents/          # 18 agent charters (generic, no project-specific paths)
-├── casting/         # Casting policy
-├── identity/        # wisdom.md (shared patterns)
-├── skills/          # Shared skills (guidelines-reference)
-├── ceremonies.md    # 5 ceremonies: kickoff, contract, review pipeline, QA, retro
-├── decisions.md     # ADR-001 through ADR-007
-├── routing.md       # 8 routing rules incl. parallel review pipeline + mandatory ask_user
-└── team.md          # Full team roster with [CTO] placeholder
+<Squad-Name>/
+├── .copilot/
+│   ├── mcp-config.json     # MCP tool configuration
+│   └── skills/             # Copilot skills (29 shared skills)
+├── .github/
+│   ├── agents/             # squad.agent.md
+│   └── workflows/          # Squad GitHub Actions workflows
+└── .squad/
+    ├── agents/             # Agent charters (and history.md)
+    ├── casting/            # Casting policy (if applicable)
+    ├── identity/           # wisdom.md, now.md
+    ├── skills/             # Squad-specific skills
+    ├── templates/          # Squad framework templates
+    ├── ceremonies.md       # Team ceremonies
+    ├── decisions.md        # Architectural decisions
+    ├── routing.md          # Routing rules
+    └── team.md             # Full team roster
 ```
 
 ---
@@ -64,26 +95,13 @@ The `[CTO]` role is **Laurent** across all projects.
 ## Using in a project
 
 1. Clone or download this repo
-2. Copy the `.squad/` folder into your new project
-3. Run `squad init` to register Squad with GitHub Copilot (if not already done)
-4. Add project-specific skills to `.squad/skills/`
-5. Remove agents you don't need from `team.md`
+2. Copy the squad subfolder that matches your project (e.g. `Expo-Squad/`)
+3. Copy `.copilot/`, `.github/`, and `.squad/` from it into your new project root
+4. Run `squad init` to register Squad with GitHub Copilot (if not already done)
+5. Add project-specific skills to `.squad/skills/`
+6. Remove agents you don't need from `team.md`
 
 Each project keeps its own agent memory (`history.md`) and decisions — nothing is shared at runtime.
-
----
-
-## ADRs
-
-| # | Decision |
-|---|----------|
-| ADR-001 | Shared Squad for Expo projects — single upstream, memory stays local |
-| ADR-002 | Howard owns architecture + code review gate |
-| ADR-003 | Parallel review pipeline (up to 9 reviewers run simultaneously) |
-| ADR-004 | Dual-track QA — Carrie (automation) + Quinn (manual Playwright) both blocking |
-| ADR-005 | Manchas is conditional — only triggered for emotionally sensitive content |
-| ADR-006 | No casting files in shared repo — casting is always project-specific |
-| ADR-007 | `ask_user` is mandatory at every coordinator handoff — never assume |
 
 ---
 

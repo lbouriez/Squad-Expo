@@ -1,0 +1,22 @@
+{
+  "mcpServers": {
+    "playwright": {
+      "type": "local",
+      "command": "npx",
+      "tools": ["*"],
+      "args": ["@playwright/mcp@latest"]
+    },
+    "azure-devops": {
+      "type": "stdio",
+      "command": "cmd",
+      "args": ["/c", "npx", "@azure-devops/mcp", "NectariSoftware"],
+      "env": {}
+    },
+    "azure": {
+      "type": "stdio",
+      "command": "cmd",
+      "args": ["/c", "npx", "@azure/mcp", "server", "start"],
+      "env": {}
+    }
+  }
+}

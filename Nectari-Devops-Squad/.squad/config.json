@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "defaultModel": "claude-sonnet-4.6",
+  "agentModelOverrides": {
+    "grant": "claude-sonnet-4.6",
+    "ellie": "claude-sonnet-4.6",
+    "arnold": "claude-sonnet-4.6",
+    "wu": "claude-sonnet-4.6",
+    "muldoon": "claude-sonnet-4.6",
+    "malcolm": "claude-sonnet-4.6",
+    "harding": "claude-sonnet-4.6",
+    "scribe": "claude-haiku-4.5"
+  }
+}
